@@ -1,9 +1,9 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:002496040093:task-definition/hotel-task:14",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:002496040093:task-definition/hotel-task:19",
   "containerDefinitions": [
     {
       "name": "hotel-container",
-      "image": "002496040093.dkr.ecr.us-east-1.amazonaws.com/hotel-api:c9f70c1d922b33f85ab22a8791f98762bd96de42",
+      "image": "002496040093.dkr.ecr.us-east-1.amazonaws.com/hotel-api:1f5afff869df2fb9b1e865098ac75f7e6ef44cb0",
       "cpu": 0,
       "portMappings": [
         {
@@ -17,10 +17,6 @@
       "essential": true,
       "environment": [
         {
-          "name": "SPRING_DATASOURCE_USERNAME",
-          "value": "admin"
-        },
-        {
           "name": "MYSQL_DATABASE",
           "value": "hotel_watterson"
         },
@@ -29,12 +25,20 @@
           "value": "3306"
         },
         {
+          "name": "JWT_SECRET",
+          "value": "ZmFrZS1kZW1vLXNlY3JldC1mb3ItY291cnNlLXByb2plY3QtY2hhbmdlLW1lLWFzYXAtMTIzNDU2Nzg5"
+        },
+        {
+          "name": "SPRING_DATASOURCE_PASSWORD",
+          "value": "F1gZMKkxBZNwf6BuJpc4"
+        },
+        {
           "name": "SPRING_DATASOURCE_URL",
           "value": "jdbc:mysql://hotel-watterson.cl0thwqvwkds.us-east-1.rds.amazonaws.com:3306/hotel_watterson"
         },
         {
-          "name": "JWT_SECRET",
-          "value": "ZmFrZS1kZW1vLXNlY3JldC1mb3ItY291cnNlLXByb2plY3QtY2hhbmdlLW1lLWFzYXAtMTIzNDU2Nzg5"
+          "name": "SPRING_DATASOURCE_USERNAME",
+          "value": "admin"
         },
         {
           "name": "MYSQL_HOST",
@@ -43,12 +47,6 @@
       ],
       "mountPoints": [],
       "volumesFrom": [],
-      "secrets": [
-        {
-          "name": "SPRING_DATASOURCE_PASSWORD",
-          "value": "F1gZMKkxBZNwf6BuJpc4"
-        }
-      ],
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
@@ -56,7 +54,8 @@
           "awslogs-create-group": "true",
           "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs"
-        }
+        },
+        "secretOptions": []
       },
       "systemControls": []
     }
@@ -64,7 +63,7 @@
   "family": "hotel-task",
   "executionRoleArn": "arn:aws:iam::002496040093:role/LabRole",
   "networkMode": "awsvpc",
-  "revision": 14,
+  "revision": 19,
   "volumes": [],
   "status": "ACTIVE",
   "requiresAttributes": [
@@ -79,9 +78,6 @@
     },
     {
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-    },
-    {
-      "name": "ecs.capability.secrets.asm.environment-variables"
     },
     {
       "name": "ecs.capability.execution-role-ecr-pull"
@@ -111,7 +107,7 @@
   ],
   "cpu": "512",
   "memory": "1024",
-  "registeredAt": "2026-05-20T21:26:48.504Z",
+  "registeredAt": "2026-05-21T20:42:35.107Z",
   "registeredBy": "arn:aws:sts::002496040093:assumed-role/voclabs/user4788339=202303534@bethlehem.edu",
   "enableFaultInjection": false,
   "tags": []

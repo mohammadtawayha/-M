@@ -46,7 +46,7 @@
       "secrets": [
         {
           "name": "SPRING_DATASOURCE_PASSWORD",
-          "valueFrom": "arn:aws:secretsmanager:us-east-1:002496040093:secret:rdsSecret-SmWr98"
+          "value": "F1gZMKkxBZNwf6BuJpc4"
         }
       ],
       "logConfiguration": {

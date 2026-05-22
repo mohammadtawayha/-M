@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ApiError> handleNotFound(RuntimeException ex, HttpServletRequest request) {
         return buildResponse(HttpStatus.NOT_FOUND, ex.getMessage(), request);
     }
-
+//  CI/CD Submission
     @ExceptionHandler({
             ResourseAlreadyExistException.class,
             ResourseAlreadyExsitInResourseException.class,
